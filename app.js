@@ -35,60 +35,6 @@ bot.command('covid', (ctx) => {
     })
 })
 
-// Delhi
-bot.action('DL', (ctx) =>{
-    ctx.deleteMessage();
-    stateCode = ctx.match;
-    getdata(stateCode)
-    .then((result) => {
-        ctx.telegram.sendMessage(ctx.chat.id,result,
-        {   
-
-            reply_markup: {
-                inline_keyboard	: [
-                    [{text: "Go Back to Menu", callback_data: "go_back"}]
-                ]
-            }
-        })
-    })
-})
-
-// Maharashtra 
-bot.action('MH', (ctx) =>{
-    ctx.deleteMessage();
-    stateCode = ctx.match;
-    getdata(stateCode)
-    .then((result) => {
-        ctx.telegram.sendMessage(ctx.chat.id,result,
-        {   
-
-            reply_markup: {
-                inline_keyboard	: [
-                    [{text: "Go Back to Menu", callback_data: "go_back"}]
-                ]
-            }
-        })
-    })
-})
-
-// Madhyaparadesh 
-bot.action('MP', (ctx) =>{
-    ctx.deleteMessage();
-    stateCode = ctx.match;
-    getdata(stateCode)
-    .then((result) => {
-        ctx.telegram.sendMessage(ctx.chat.id,result,
-        {   
-
-            reply_markup: {
-                inline_keyboard	: [
-                    [{text: "Go Back to Menu", callback_data: "go_back"}]
-                ]
-            }
-        })
-    })
-})
-
 // Go Back Button 
 bot.action('go_back', (ctx) => {
     ctx.deleteMessage();
